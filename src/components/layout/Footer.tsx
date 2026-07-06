@@ -34,7 +34,7 @@ export default function Footer() {
                 alt="ACME Sign & Graphics Company"
                 width={160}
                 height={48}
-                className="object-contain brightness-0 invert"
+                className="object-contain"
               />
             </Link>
             <h3 className="text-white font-tight text-xl font-bold leading-snug mb-4">
@@ -155,7 +155,7 @@ export default function Footer() {
       <div
         aria-hidden="true"
         className="absolute bottom-0 left-0 right-0 flex items-end overflow-hidden pointer-events-none select-none"
-        style={{ height: '0.55em', fontSize: '22vw', lineHeight: 1 }}
+        style={{ height: '16vw', fontSize: '22vw', lineHeight: 1 }}
       >
         <span
           className="font-tight font-black text-white whitespace-nowrap w-full text-center leading-none"
