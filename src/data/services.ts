@@ -121,7 +121,7 @@ export const services: Service[] = [
     desc: 'We offer installation services for local and out-of-town clients. From simple decal installs to full-service electrical sign installation — let us be your trusted installer anywhere in Nova Scotia.',
     body: 'We offer installation services for local and out-of-town clients. From simple decal installs to full-service electrical sign installation — let us be your trusted installer anywhere in Nova Scotia.',
     img: '/images/gallery/Installation-and-Service-scaled.webp',
-    heroImg: '/images/gallery/Installation-and-Service-scaled.webp',
+    heroImg: '/images/gallery/3-scaled.webp',
     href: '/services/sign-service-repair',
   },
 ]

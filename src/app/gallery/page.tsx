@@ -19,7 +19,16 @@ const ALL_FOLDERS: CategoryFolder[] = [
   'gallery',
 ]
 
-export default function GalleryPage() {
+interface GalleryPageProps {
+  searchParams: Promise<{ category?: string }>
+}
+
+export default async function GalleryPage({ searchParams }: GalleryPageProps) {
+  const { category } = await searchParams
+  const initialFilter: CategoryFolder | 'all' = ALL_FOLDERS.includes(category as CategoryFolder)
+    ? (category as CategoryFolder)
+    : 'all'
+
   const photos: GalleryPhoto[] = ALL_FOLDERS.flatMap((folder) =>
     getCategoryImages(folder).map((src) => ({ src, folder }))
   )
@@ -35,7 +44,7 @@ export default function GalleryPage() {
           {photos.length} real projects completed for businesses across Atlantic Canada — from
           storefront signage to full fleet wraps.
         </p>
-        <GalleryMasonry photos={photos} />
+        <GalleryMasonry photos={photos} initialFilter={initialFilter} />
       </div>
     </section>
   )
