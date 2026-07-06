@@ -2,9 +2,11 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { services, getServiceBySlug } from '@/data/services'
+import { getCategoryImages, CATEGORY_FOLDER_MAP } from '@/lib/categoryImages'
 import SectionLabel from '@/components/ui/SectionLabel'
 import PillButton from '@/components/ui/PillButton'
 import ServiceCard from '@/components/services/ServiceCard'
+import RelatedWork from '@/components/services/RelatedWork'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -21,6 +23,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: service.name,
     description: service.desc,
+    openGraph: {
+      images: [{ url: service.heroImg }],
+    },
   }
 }
 
@@ -30,6 +35,8 @@ export default async function ServicePage({ params }: Props) {
   if (!service) notFound()
 
   const related = services.filter((s) => s.slug !== slug).slice(0, 3)
+  const folder = CATEGORY_FOLDER_MAP[slug]
+  const categoryPhotos = folder ? getCategoryImages(folder) : []
 
   return (
     <>
@@ -64,10 +71,17 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
+      {/* ── Real Work Gallery ─────────────────────────────────── */}
+      <RelatedWork
+        images={categoryPhotos}
+        categoryLabel={service.name}
+        viewAllHref={`/gallery?category=${folder ?? ''}`}
+      />
+
       {/* ── Related Services ──────────────────────────────────── */}
       <section className="bg-cream-2 section-padding px-6">
         <div className="max-w-[1480px] mx-auto">
-          <SectionLabel className="mb-4">◆ Related Services</SectionLabel>
+          <SectionLabel className="mb-4">◆ Other Services</SectionLabel>
           <h2 className="font-tight font-black text-dark text-2xl tracking-tight mb-10">
             Explore More
           </h2>
