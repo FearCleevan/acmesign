@@ -40,8 +40,8 @@ export const services: Service[] = [
     tagline: '3D signs that stand out from your building',
     desc: "Channel letters catch the eye by standing out in three dimensions. Made with aluminum, stainless steel, or acrylic — illuminated or non-illuminated. Finishes that won't chip, crack, fade, or discolor.",
     body: "Channel letters catch the eye by standing out in three dimensions from your building facade. Made with aluminum, stainless steel, or acrylic — illuminated or non-illuminated. Our finishes won't chip, crack, fade, or discolor.",
-    img: '/images/channel/Channel-andIlluminated-Signs-1-scaled.webp',
-    heroImg: '/images/channel/Channel-andIlluminated-Signs-1-scaled.webp',
+    img: '/images/channel/Beautiful-Baths-Sign.webp',
+    heroImg: '/images/channel/beavertails-service-1.webp',
     href: '/services/channel-letter-signs',
   },
   {
@@ -50,8 +50,8 @@ export const services: Service[] = [
     tagline: 'Bold 3D visual sign presentation',
     desc: 'Whether for interior or exterior use, dimensional signs deliver a professional, eye-catching presentation. From cut and cast metals to plastic and acrylic — find exactly the right letters for your style and budget.',
     body: 'Whether for interior or exterior use, dimensional signs deliver a professional, eye-catching presentation. From cut and cast metals to plastic and acrylic — find exactly the right letters for your style and budget.',
-    img: '/images/channel/Channel-andIlluminated-Signs-2-scaled.webp',
-    heroImg: '/images/channel/Channel-andIlluminated-Signs-2-scaled.webp',
+    img: '/images/channel/haydens-sign-2000x1250-1.webp',
+    heroImg: '/images/channel/haydens-sign-2000x1250-2.webp',
     href: '/services/dimensional-signs',
   },
   {
@@ -60,8 +60,8 @@ export const services: Service[] = [
     tagline: 'Light boxes in any shape or size',
     desc: 'ACME SIGN can provide most any size of illuminated light boxes in any shape or size. We help you navigate bylaws and budget to find the right solution — saving you time and money.',
     body: 'ACME SIGN can provide most any size of illuminated light boxes in any shape or size. We help you navigate bylaws and budget to find the right solution — saving you time and money.',
-    img: '/images/channel/Channel-and-Illuminated-Signs-scaled.webp',
-    heroImg: '/images/channel/Channel-and-Illuminated-Signs-scaled.webp',
+    img: '/images/channel/Fairview-United-scaled.webp',
+    heroImg: '/images/channel/LakeCityCider-scaled.webp',
     href: '/services/illuminated-signs',
   },
   {
