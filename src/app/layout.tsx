@@ -3,6 +3,7 @@ import { Inter, Inter_Tight } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { getLocalBusinessSchema } from '@/lib/seo/localBusinessSchema'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -42,6 +43,10 @@ export default function RootLayout({
       className={`${inter.variable} ${interTight.variable}`}
     >
       <body className="min-h-screen flex flex-col bg-cream antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getLocalBusinessSchema()) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
