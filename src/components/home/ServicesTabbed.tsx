@@ -93,7 +93,7 @@ export default function ServicesTabbed() {
       id="services"
       className="bg-cream section-padding px-6 overflow-hidden"
     >
-      <div className="max-w-[1480px] mx-auto">
+      <div className="max-w-370 mx-auto">
 
         {/* ── Section Header ────────────────────────────────────── */}
         <motion.div
@@ -147,12 +147,12 @@ export default function ServicesTabbed() {
           transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <div
-            className={`rounded-card overflow-hidden bg-dark grid grid-cols-1 lg:grid-cols-2 min-h-[480px] transition-opacity duration-[180ms] ${
+            className={`rounded-card overflow-hidden bg-dark grid grid-cols-1 lg:grid-cols-2 min-h-120 transition-opacity duration-180 ${
               isTransitioning ? 'opacity-0' : 'opacity-100'
             }`}
           >
             {/* Left — Photo */}
-            <div className="relative min-h-[300px] lg:min-h-0 overflow-hidden">
+            <div className="relative min-h-75 lg:min-h-0 overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active.key + '-img'}
@@ -169,8 +169,8 @@ export default function ServicesTabbed() {
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/10" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-r from-black/30 via-transparent to-black/10" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" />
                 </motion.div>
               </AnimatePresence>
             </div>

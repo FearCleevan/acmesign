@@ -14,7 +14,7 @@ export default function ServicesPage() {
     <>
       {/* ── Page Hero ─────────────────────────────────────────── */}
       <section className="bg-cream pt-44 pb-16 px-6">
-        <div className="max-w-[1480px] mx-auto">
+        <div className="max-w-370 mx-auto">
           <div className="max-w-3xl">
             <SectionLabel className="mb-4">◆ What We Offer</SectionLabel>
             <h1 className="font-tight font-black text-dark leading-[0.95] tracking-[-0.02em] mb-6">
@@ -35,7 +35,7 @@ export default function ServicesPage() {
 
       {/* ── Services Grid ─────────────────────────────────────── */}
       <section className="bg-cream pb-24 px-6">
-        <div className="max-w-[1480px] mx-auto">
+        <div className="max-w-370 mx-auto">
           {/* Divider */}
           <div className="border-t border-dark/10 mb-12" />
           <ServiceGrid />
@@ -44,7 +44,7 @@ export default function ServicesPage() {
 
       {/* ── CTA Strip ─────────────────────────────────────────── */}
       <section className="bg-brand px-6 py-16">
-        <div className="max-w-[1480px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="max-w-370 mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="font-tight font-black text-white text-2xl lg:text-3xl tracking-tight">
               Not sure what you need?

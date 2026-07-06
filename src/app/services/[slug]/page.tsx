@@ -50,8 +50,8 @@ export default async function ServicePage({ params }: Props) {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-        <div className="relative z-10 max-w-[1480px] mx-auto w-full">
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/20" />
+        <div className="relative z-10 max-w-370 mx-auto w-full">
           <SectionLabel className="text-white/60 mb-3">{service.tagline}</SectionLabel>
           <h1 className="font-tight font-black text-white leading-[0.95] tracking-[-0.02em] max-w-2xl mb-6">
             {service.name}
@@ -80,7 +80,7 @@ export default async function ServicePage({ params }: Props) {
 
       {/* ── Related Services ──────────────────────────────────── */}
       <section className="bg-cream-2 section-padding px-6">
-        <div className="max-w-[1480px] mx-auto">
+        <div className="max-w-370 mx-auto">
           <SectionLabel className="mb-4">◆ Other Services</SectionLabel>
           <h2 className="font-tight font-black text-dark text-2xl tracking-tight mb-10">
             Explore More
