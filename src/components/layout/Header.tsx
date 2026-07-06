@@ -52,13 +52,22 @@ export default function Header() {
   const dropRef   = useRef<HTMLLIElement>(null)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
+  // Close mobile menu + desktop dropdown on route change. Adjusted during
+  // render (React's recommended pattern for "state derived from a changed
+  // prop") instead of in an effect, to avoid the extra render pass a
+  // setState-in-effect would trigger.
+  const [prevPathname, setPrevPathname] = useState(pathname)
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname)
+    setMobileOpen(false)
+    setServicesOpen(false)
+  }
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  useEffect(() => { setMobileOpen(false); setServicesOpen(false) }, [pathname])
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -85,10 +94,10 @@ export default function Header() {
         }`}
       >
         <nav
-          className={`w-full max-w-[1480px] rounded-pill flex items-center justify-between transition-all duration-300 backdrop-blur-md ${
+          className={`w-full max-w-370 rounded-pill flex items-center justify-between transition-all duration-300 backdrop-blur-md ${
             scrolled
-              ? 'h-[68px] px-5 shadow-2xl'
-              : 'h-[76px] px-6 shadow-xl'
+              ? 'h-17 px-5 shadow-2xl'
+              : 'h-19 px-6 shadow-xl'
           }`}
           style={{ backgroundColor: 'rgba(17,17,17,0.96)' }}
         >
@@ -249,7 +258,7 @@ export default function Header() {
 
       {/* ── Mobile Full-Screen Overlay ──────────────────────────────────── */}
       <div
-        className={`fixed inset-0 z-[60] bg-dark overflow-y-auto transition-opacity duration-300 ${
+        className={`fixed inset-0 z-60 bg-dark overflow-y-auto transition-opacity duration-300 ${
           mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
