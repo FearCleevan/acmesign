@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
+/* ─── ACME Sign & Graphics — Design System ─────────────────────────────── */
+
+@theme {
+  /* Color palette */
+  --color-brand:   #CC0000;
+  --color-brand-d: #a80000;
+  --color-cream:   #F5F3EF;
+  --color-cream-2: #EDE9E3;
+  --color-dark:    #111111;
+  --color-muted:   #888888;
+  --color-amber:   #FFB800;
+
+  /* Font families */
+  --font-tight: var(--font-inter-tight), 'Inter Tight', sans-serif;
+  --font-body:  var(--font-inter), 'Inter', sans-serif;
+
+  /* Border radius tokens */
+  --radius-pill:   999px;
+  --radius-card:   24px;
+  --radius-inner:  16px;
+  --radius-custom: 18px;
+}
+
+/* ─── CSS Variables ─────────────────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand:   #CC0000;
+  --brand-dark: #a80000;
+  --cream:   #F5F3EF;
+  --cream2:  #EDE9E3;
+  --dark:    #111111;
+  --muted:   #888888;
+  --amber:   #FFB800;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ─── Base ──────────────────────────────────────────────────────────────── */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--cream);
+    color: var(--dark);
+    font-family: var(--font-body);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-tight);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--dark);
+  }
+
+  h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+  h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
+  h3 { font-size: clamp(1.25rem, 2.5vw, 1.875rem); }
+
+  p {
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Utilities ─────────────────────────────────────────────────────────── */
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .text-balance { text-wrap: balance; }
+
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* ─── Ticker animation ──────────────────────────────────────────────────── */
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
 }
