@@ -109,7 +109,7 @@ export default function LedSignsPage() {
       </section>
 
       <section className="bg-cream-2 section-padding px-6">
-        <div className="max-w-[1480px] mx-auto max-w-2xl">
+        <div className="max-w-2xl mx-auto">
           <SectionLabel className="mb-4">◆ Key Features</SectionLabel>
           <ul className="space-y-3">
             {FEATURES.map((f) => (
